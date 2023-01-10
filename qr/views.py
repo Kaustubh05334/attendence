@@ -1,6 +1,10 @@
 from django.shortcuts import render
 
 def med(request):
+    return render(request,'qr/home.html')
 
-    d1 = {234:"kabfgd"}
-    return render(request,'home.html',d1)
+def create_qr(request):
+    return render(request,'qr/create_qr.html')
+
+def student(request):
+    return render(request, 'qr/student.html')

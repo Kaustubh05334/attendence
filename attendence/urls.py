@@ -15,8 +15,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from qr import views
+from django.conf import settings
+from django.conf.urls.static import static
+from qr.views import med,create_qr,student
+from account.views import login_page,logout_page,registeruser,forgot_pass
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.med),
-]
+
+    #qr
+    path('',med),
+    path('teacher/',create_qr),
+    path('student/',student),
+
+    #account
+    path('signup/',registeruser),
+    path('login/',login_page),
+    path('logout/',logout_page),
+    path('forgot/',forgot_pass)
+]+ static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
