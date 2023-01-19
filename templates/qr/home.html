@@ -1,14 +1,63 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <a href="/teacher">Teacher</a>
-    <a href="/student">Student</a>
-    <a href="/login">login</a>
-</body>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    #home::before{
+      background: url("{% static 'img/background.png' %}") no-repeat center
+      center/cover;
+    }
+  </style>
+  <body>
+    <navbar class="nav">
+      <div class="logo">smartPresence</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </navbar>
+    <br />
+    <section id="home">
+      <div class="box">
+        <div class="intro">
+          <h2>ATTENDANCE MADE EASY</h2>
+          In the era of digital world why use paper for attendance
+        </div>
+        <div class="info">
+          <a href="/teacher"><button class="btn1">Teacher</button></a>
+          <a href="/student"><button class="btn1">Student</button></a>
+          <a href="/login"><button class="btn1">Login</button></a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
