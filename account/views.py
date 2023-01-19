@@ -10,7 +10,7 @@ def login_page(request):
         user_name = request.POST['username']
         user_password = request.POST['password']
         
-        user =authenticate(request,username=user_name,password=user_password)
+        user = authenticate(request,username=user_name,password=user_password)
         if user is not None:
             login(request,user)
             return redirect('/')

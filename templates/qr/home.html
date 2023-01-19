@@ -1,14 +1,187 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <a href="/teacher">Teacher</a>
-    <a href="/student">Student</a>
-    <a href="/login">login</a>
-</body>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .nav {
+      /* border: 2px solid red; */
+      display: flex;
+      position: sticky;
+      align-items: center;
+      background-color: black;
+    }
+
+    .nav .logo {
+      /* border: 2px solid blue; */
+      color: white;
+      margin: auto;
+      margin-left: 0px;
+      padding-left: 40px;
+      font-family: "EB Garamond", serif;
+      font-size: 4.2rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: black;
+      /* border: 2px solid blue; */
+      color: white;
+      padding: 0px 5px;
+      margin: 0px 15px;
+      font-size: 1.3rem;
+      font-family: "DM Serif Display", serif;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      /* border: 2px solid rebeccapurple; */
+      padding-right: 20px;
+    }
+
+    #home {
+      height: 590px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      /* color: white; */
+    }
+
+    #home::before {
+      content: "";
+      position: absolute;
+      height: 590px;
+      /* width: 100%; */
+      background: url("{{ STATIC_URL }}Images/background.png") no-repeat center
+        center/cover;
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .intro {
+      padding: 40px;
+      padding-top: 0px;
+      font-style: italic;
+      font-family: "Merriweather", serif;
+      font-size: 1.2rem;
+    }
+
+    #home h2 {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 3rem;
+      font-style: normal;
+      line-height: 3rem;
+      margin-bottom: 20px;
+      animation: left-to-right 0.6s ease-in 1 forwards;
+    }
+
+    @keyframes left-to-right {
+      from {
+        transform: translateX(-30px);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: translateX(3px);
+      }
+    }
+    #home .info {
+      padding-left: 40px;
+      animation: right-to-left 1.3s ease-in 1 forwards;
+    }
+    @keyframes right-to-left {
+      from {
+        transform: translateX(30px);
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: translateX(3px);
+      }
+    }
+    #home .btn1 {
+      width: 90px;
+      margin-right: 20px;
+      margin-top: -20px;
+      background-color: transparent;
+      padding: 6px 10px;
+      margin-bottom: 22px;
+      cursor: pointer;
+      font-family: "Sawarabi Mincho", sans-serif;
+      font-size: 1rem;
+      background-color: rgb(201, 150, 74);
+      border: 2px solid rgb(201, 150, 74);
+      color: white;
+      font-weight: 590;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 0px 4px black;
+    }
+    #home .btn1:hover {
+      background-color: transparent;
+      color: black;
+    }
+    #home .box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+  <body>
+    <navbar class="nav">
+      <div class="logo">smartPresence</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+    </navbar>
+    <br />
+    <section id="home">
+      <div class="box">
+        <div class="intro">
+          <h2>ATTENDANCE MADE EASY</h2>
+          In the era of digital world why use paper for attendance
+        </div>
+        <div class="info">
+          <a href="/teacher"><button class="btn1">Teacher</button></a>
+          <a href="/student"><button class="btn1">Student</button></a>
+          <a href="/login"><button class="btn1">Login</button></a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
