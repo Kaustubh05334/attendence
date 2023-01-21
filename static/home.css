@@ -1,0 +1,127 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav {
+  /* border: 2px solid red; */
+  display: flex;
+  position: sticky;
+  align-items: center;
+  background-color: black;
+}
+
+.nav .logo {
+  /* border: 2px solid blue; */
+  color: white;
+  margin: auto;
+  margin-left: 0px;
+  padding-left: 40px;
+  font-family: "EB Garamond", serif;
+  font-size: 4.2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  color: white;
+  padding: 0px 5px;
+  margin: 0px 15px;
+  font-size: 1.3rem;
+  font-family: "DM Serif Display", serif;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* border: 2px solid rebeccapurple; */
+  padding-right: 20px;
+}
+
+#home {
+  height: 590px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* color: white; */
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  height: 590px;
+  /* width: 100%; */
+  background: url("../static/img/background.png") no-repeat center center/cover;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+.intro {
+  padding: 40px;
+  padding-top: 0px;
+  font-style: italic;
+  font-family: "Merriweather", serif;
+  font-size: 1.2rem;
+}
+
+#home h2 {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 3rem;
+  margin-bottom: 20px;
+  animation: left-to-right 0.6s ease-in 1 forwards;
+}
+
+@keyframes left-to-right {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
+#home .info {
+  padding-left: 40px;
+  animation: right-to-left 1.3s ease-in 1 forwards;
+}
+@keyframes right-to-left {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
+#home .btn1 {
+  width: 90px;
+  margin-right: 20px;
+  margin-top: -20px;
+  background-color: transparent;
+  padding: 6px 10px;
+  margin-bottom: 22px;
+  cursor: pointer;
+  font-family: "Sawarabi Mincho", sans-serif;
+  font-size: 1rem;
+  background-color: #24cfaa;
+  border: 2px solid #24cfaa;
+  color: white;
+  font-weight: 590;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 4px #24cfaa;
+}
+#home .btn1:hover {
+  background-color: transparent;
+  color: black;
+}
+#home .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
