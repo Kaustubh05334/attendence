@@ -28,12 +28,5 @@
     {% for qr in qr_code %}
     <img src="{{qr.image.url}}" /><br />
     {%endfor%}
-
-    <!-- <form method="post">
-        {% csrf_token %}
-        Subject<br>
-        <input type="text" name="subject" placeholder="subject"><br>
-        <button type="submit">Generate QR</button>        
-    </form> -->
   </body>
 </html>

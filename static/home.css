@@ -23,7 +23,8 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: black;
+  /* color: black; */
+  /* border: 2px solid blue; */
   color: white;
   padding: 0px 5px;
   margin: 0px 15px;
@@ -53,7 +54,10 @@ body {
   position: absolute;
   height: 590px;
   /* width: 100%; */
+  /* check bg */
   background: url("../static/img/background.png") no-repeat center center/cover;
+  background: url('../img/background.png') no-repeat center
+    center/cover;
   opacity: 0.9;
   z-index: -1;
 }
@@ -109,12 +113,20 @@ body {
   cursor: pointer;
   font-family: "Sawarabi Mincho", sans-serif;
   font-size: 1rem;
+  /*
   background-color: #24cfaa;
   border: 2px solid #24cfaa;
   color: white;
   font-weight: 590;
   transition: all 0.3s ease-in-out;
   box-shadow: 0px 0px 4px #24cfaa;
+   */
+  background-color: rgb(201, 150, 74);
+  border: 2px solid rgb(201, 150, 74);
+  color: white;
+  font-weight: 590;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 4px black;
 }
 #home .btn1:hover {
   background-color: transparent;
