@@ -89,3 +89,8 @@ body {
 .signin-button:active {
   background: #1da88a;
 }
+
+.hidden{
+  display: none;
+}
+

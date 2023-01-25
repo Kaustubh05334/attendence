@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create qr</title>
     <link rel="stylesheet" href="{% static 'login_page.css' %}" />
+    <!-- <script src="{% static 'login_page.js' %}"></script> -->
   </head>
-  <body>
-    <form class="login-div">
+  <body id="body">
+    <form class="login-div" id="form" class="hidden">
       {% csrf_token %}
       <div class="title">Subject</div>
       <div class="fields">
@@ -23,10 +24,21 @@
           <input type="text" name="subject" placeholder="Enter the subject" />
         </div>
       </div>
-      <button class="signin-button" type="submit">Generate QR</button>
+      <button class="signin-button" type="submit" class="hidden">Generate QR</button>
     </form>
-    {% for qr in qr_code %}
-    <img src="{{qr.image.url}}" /><br />
-    {%endfor%}
+    <!-- <img src="{% static 'img/qrcode.png'%}" id ="image" style = "display:none" class="hidden"> -->
   </body>
+  <script>
+    const btn = document.querySelector(".signin-button");
+    const modal = document.getElementById('image');
+    const form = document.getElementById('form');
+    btn.onclick=function(){
+        var img =document.createElement('img')
+        img.src="{% static 'img/qrcode.png'%}"
+        document.getElementById("body").appendChild(img)
+        const form =document.getElementById("form");
+        form.remove();
+    }    
+  </script>
 </html>
+
